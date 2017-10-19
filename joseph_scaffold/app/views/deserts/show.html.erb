@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @desert.name %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @desert.temperature %>
+</p>
+
+<p>
+  <strong>Circumference:</strong>
+  <%= @desert.circumference %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @desert.location %>
+</p>
+
+<%= link_to 'Edit', edit_desert_path(@desert) %> |
+<%= link_to 'Back', deserts_path %>

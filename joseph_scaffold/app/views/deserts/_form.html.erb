@@ -1,0 +1,37 @@
+<%= form_with(model: desert, local: true) do |form| %>
+  <% if desert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(desert.errors.count, "error") %> prohibited this desert from being saved:</h2>
+
+      <ul>
+      <% desert.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :desert_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :temperature %>
+    <%= form.number_field :temperature, id: :desert_temperature %>
+  </div>
+
+  <div class="field">
+    <%= form.label :circumference %>
+    <%= form.number_field :circumference, id: :desert_circumference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :desert_location %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

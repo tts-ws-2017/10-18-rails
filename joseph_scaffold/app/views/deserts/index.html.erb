@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Deserts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Temperature</th>
+      <th>Circumference</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deserts.each do |desert| %>
+      <tr>
+        <td><%= desert.name %></td>
+        <td><%= desert.temperature %></td>
+        <td><%= desert.circumference %></td>
+        <td><%= desert.location %></td>
+        <td><%= link_to 'Show', desert %></td>
+        <td><%= link_to 'Edit', edit_desert_path(desert) %></td>
+        <td><%= link_to 'Destroy', desert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Desert', new_desert_path %>
